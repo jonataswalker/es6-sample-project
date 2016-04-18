@@ -1,0 +1,75 @@
+{
+  "name": "es6-sample-project",
+  "version": "1.0.0",
+  "description": "An ES6 sample project using Rollup, Babel, Sass",
+  "author": "Jonatas Walker",
+  "homepage": "https://github.com/jonataswalker/es6-sample-project",
+  "license": "MIT",
+  "main": "build/es6-sample-project.min.js",
+  "rollup": {
+    "entry": "src/js/main.js",
+    "dest": "build/es6-sample-project.js",
+    "moduleName": "SampleProject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonataswalker/es6-sample-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonataswalker/es6-sample-project/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "clean-css": "^3.4.12",
+    "eslint": "^2.8.0",
+    "node-sass": "^3.4.2",
+    "node-sass-json-importer": "^1.0.6",
+    "nodemon": "^1.9.1",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.1",
+    "rollup": "^0.25.8",
+    "rollup-plugin-babel": "^2.4.0",
+    "rollup-plugin-json": "^2.0.0",
+    "susy": "^2.2.12",
+    "uglify-js": "^2.6.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "amd": true,
+      "commonjs": true,
+      "es6": true,
+      "node": false
+    },
+    "rules": {
+      "block-scoped-var": 1,
+      "dot-notation": 1,
+      "no-alert": 2,
+      "no-caller": 2,
+      "no-eval": 2,
+      "no-proto": 2,
+      "no-redeclare": 2,
+      "valid-typeof": 2,
+      "no-unreachable": 2,
+      "no-irregular-whitespace": 1,
+      "no-invalid-regexp": 1,
+      "no-func-assign": 2,
+      "no-extra-semi": 2,
+      "no-dupe-keys": 2,
+      "no-undef": 2,
+      "no-use-before-define": 2,
+      "no-unused-vars": 1,
+      "strict": [
+        1,
+        "global"
+      ],
+      "key-spacing": 1,
+      "new-cap": 1,
+      "quotes": [
+        1,
+        "single"
+      ]
+    }
+  }
+}

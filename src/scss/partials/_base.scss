@@ -1,0 +1,25 @@
+@import "../../../sass-vars.json";
+
+// dependencies
+@import "../../../node_modules/susy/sass/susy";
+
+// namespace to avoid conflict
+//$namespace: "_jw-tpk";
+
+// container width
+$container-width: #{$width}px;
+
+// container height
+$container-height: #{$height}px;
+
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+
+// Configuring Susy Defaults
+$susy: (
+	container: $container-width,
+	gutters: 1/6,
+	columns: 10,
+	global-box-sizing: border-box
+);
