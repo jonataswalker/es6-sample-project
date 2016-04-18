@@ -1,5 +1,5 @@
 import json from 'rollup-plugin-json';
-import babel from 'rollup-plugin-babel';
+import buble from 'rollup-plugin-buble';
 
 var pkg = require('./package.json');
 
@@ -12,10 +12,8 @@ export default {
     json({
       exclude: [ 'node_modules/**' ]
     }),
-    babel({
-      exclude: ['node_modules/**', '*.json'],
-      presets: ['es2015-rollup'],
-      babelrc: false
+    buble({
+      exclude: ['node_modules/**', '*.json']
     })
   ]
 }

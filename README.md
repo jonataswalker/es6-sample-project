@@ -1,12 +1,39 @@
 # es6-sample-project
-An ES6 sample project using [Rollup](https://github.com/rollup/rollup), [Babel](https://github.com/babel/babel) (as a plugin), [Sass (node-sass)](https://github.com/sass/node-sass/).
+An ES6 sample project using [Rollup](https://github.com/rollup/rollup), [Bublé](https://buble.surge.sh/guide/#what-is-buble) (as a plugin), [Sass (node-sass)](https://github.com/sass/node-sass/).
 
 This package shows how to get started writing ES6 modules. The workflow is like this:
 
-![FileBrowser anim](https://raw.githubusercontent.com/jonataswalker/es6-sample-project/images/images/es6-project-flowchart.png)
+![es6 flowchart](https://raw.githubusercontent.com/jonataswalker/es6-sample-project/images/images/es6-project-flowchart.png)
 
 ### Why?
 Because all these tools and how they fit together can be scary at the beginning.
+
+### Usage
+```
+$ git clone git@github.com:jonataswalker/es6-sample-project.git
+$ cd es6-sample-project
+$ npm install
+```
+
+### Available tasks
+
+###### Build (js && css) and Watch (for changes)
+`$ make build-watch`
+
+###### Build (js && css)
+`$ make build`
+
+###### Build JavaScript
+`$ make build-js`
+
+Includes `make bundle-js` `make lint` `make uglifyjs` `make add-js-header`
+
+###### Build CSS
+`$ make build-css`
+Includes `make compile-sass` `make prefix-css` `make cleancss` `make add-css-header`
+
+### Why Makefile?
+Because it's just great.
 
 ### Final result
 See [here a demo](http://rawgit.com/jonataswalker/es6-sample-project/master/examples/example.html).
