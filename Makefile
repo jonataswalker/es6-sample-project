@@ -7,10 +7,10 @@ define GetFromPkg
 $(shell node -p "require('./package.json').$(1)")
 endef
 
-PROJECT		:= $(call GetFromPkg, name)
-LAST_VERSION	:= $(call GetFromPkg, version)
-DESCRIPTION	:= $(call GetFromPkg, description)
-PROJECT_URL	:= $(call GetFromPkg, homepage)
+PROJECT		:= $(call GetFromPkg,name)
+LAST_VERSION	:= $(call GetFromPkg,version)
+DESCRIPTION	:= $(call GetFromPkg,description)
+PROJECT_URL	:= $(call GetFromPkg,homepage)
 
 JS_SRC 		:= $(SRC_DIR)/js
 SASS_SRC 	:= $(SRC_DIR)/scss
@@ -18,8 +18,8 @@ SASS_VENDOR_SRC	:= $(SASS_SRC)/vendor
 
 SASS_MAIN_FILE 	:= $(SASS_SRC)/main.scss
 
-JS_DEBUG	:= $(ROOT_DIR)/$(call GetFromPkg, rollup.dest)
-JS_FINAL	:= $(ROOT_DIR)/$(call GetFromPkg, main)
+JS_DEBUG	:= $(ROOT_DIR)/$(call GetFromPkg,rollup.dest)
+JS_FINAL	:= $(ROOT_DIR)/$(call GetFromPkg,main)
 CSS_COMBINED 	:= $(BUILD_DIR)/$(PROJECT).css
 CSS_FINAL 	:= $(BUILD_DIR)/$(PROJECT).min.css
 TMPFILE 	:= $(BUILD_DIR)/tmp
