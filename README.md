@@ -1,4 +1,4 @@
-[![NPM][npm-icon] ][npm-url]
+[![npm package](https://nodei.co/npm/es6-sample-project.png?downloads=true&stars=true)](https://nodei.co/npm/es6-sample-project/)
 
 # es6-sample-project
 An ES6 sample project using [Rollup](https://github.com/rollup/rollup), [Bublé](https://buble.surge.sh/guide/#what-is-buble) (as a plugin), [Sass (node-sass)](https://github.com/sass/node-sass/).
