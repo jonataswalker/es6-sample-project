@@ -1,12 +1,11 @@
 // this will be css prefix classes
-import { namespace, container as container_class } from '../../sass-vars.json';
-import utils from './utils';
+import * as VARS from '../../sass-vars.json';
 
 /**
  * @class Html
  */
 export class Html {
-  
+
   /**
    * @constructor
    * @param {Function} base Base class.
@@ -15,17 +14,17 @@ export class Html {
     this.Base = base;
     return this;
   }
-  
+
   createContainer() {
+    console.warn();
     let container = document.createElement('div');
-    container.className = namespace + container_class;
+    container.className = VARS.namespace + VARS.container;
     container.textContent = 'Drag me';
     document.body.appendChild(container);
     return container;
   }
-  
+
   htmlTest() {
-    console.info('htmlTest');
+    console.warn('htmlTest invoked');
   }
-  
 }

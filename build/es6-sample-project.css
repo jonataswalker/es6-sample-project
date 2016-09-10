@@ -1,8 +1,8 @@
 /**
  * An ES6 sample project using Rollup, Bublé, Sass
  * https://github.com/jonataswalker/es6-sample-project
- * Version: v1.0.0
- * Built: 2016-04-18T20:41:20-0300
+ * Version: v1.2.0
+ * Built: 2016-09-10T17:24:23-03:00
  */
 
 ._some-original-namespace-container {
@@ -16,18 +16,20 @@
   overflow: hidden;
   border-radius: 3px;
   box-sizing: border-box;
-  font-size: 1rem;
-  max-width: 250px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1rem;
   background-image: -webkit-radial-gradient(#FF8A65, #FF7043);
   background-image: radial-gradient(#FF8A65, #FF7043); }
-  ._some-original-namespace-container:after {
-    content: " ";
-    display: block;
+  ._some-original-namespace-container::before, ._some-original-namespace-container::after {
+    content: "";
+    display: table; }
+  ._some-original-namespace-container::after {
     clear: both; }
-  ._some-original-namespace-container *, ._some-original-namespace-container *:before, ._some-original-namespace-container *:after {
-    box-sizing: border-box; }
+  ._some-original-namespace-container *,
+  ._some-original-namespace-container *::before,
+  ._some-original-namespace-container *::after {
+    box-sizing: inherit; }
   ._some-original-namespace-container:hover {
     cursor: -webkit-grab;
     cursor: grab; }

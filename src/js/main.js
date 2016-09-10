@@ -7,7 +7,6 @@ import { dragging, height as container_height } from '../../sass-vars.json';
  * @class Base
  */
 export default class Base {
-  
   /**
    * @constructor
    */
@@ -16,9 +15,9 @@ export default class Base {
     // And let each class visible to each other
     this.constructor.Html = new Html(this);
     this.container = this.constructor.Html.createContainer();
-    
+
     const $drag = this.constructor.Drag = new Drag(this);
-    
+
     $drag.when({
       start: () => {
         this.container.classList.add(dragging);
@@ -33,12 +32,12 @@ export default class Base {
         this.container.classList.remove(dragging);
         this.container.textContent = 'Drag me';
         this.container.style.lineHeight = container_height + 'px';
-        if(resp.y < 0) this.container.style.top = 0;
+        if (resp.y < 0) this.container.style.top = 0;
       }
     });
   }
-  
+
   baseTest() {
-    console.info('baseTest');
+    console.warn('baseTest invoked');
   }
 }

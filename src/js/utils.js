@@ -8,7 +8,7 @@ export default {
    * @returns {HTMLElement}
    */
   $(id) {
-    id = (id[0] == '#') ? id.substr(1, id.length) : id;
+    id = (id[0] === '#') ? id.substr(1, id.length) : id;
     return document.getElementById(id);
   },
   /**
@@ -35,13 +35,13 @@ export default {
    * @returns {String}
    */
   toType(obj) {
-    if(obj == window && obj.document && obj.location){
+    if (obj === window && obj.document && obj.location) {
       return 'window';
-    } else if(obj == document){
+    } else if (obj === document) {
       return 'htmldocument';
-    } else if(typeof obj === 'string'){
+    } else if (typeof obj === 'string') {
       return 'string';
-    } else if(this.isElement(obj)){
+    } else if (this.isElement(obj)) {
       return 'element';
     }
   },
@@ -64,7 +64,7 @@ export default {
   createFragment(html) {
     const frag = document.createDocumentFragment();
     const temp = document.createElement('div');
-    
+
     temp.innerHTML = html;
     while (temp.firstChild) {
       frag.appendChild(temp.firstChild);
@@ -85,4 +85,4 @@ export default {
       throw message; // Fallback
     }
   }
-}
+};
