@@ -9,10 +9,17 @@
 	overflow: hidden;
 	border-radius: 3px;
 	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
 	@include font-size(16);
-	@include container;
 	@include background-radial-gradient(#FF8A65, #FF7043);
-	@include border-box-sizing;
+	@include clearfix;
+        
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+        }
 
 	&:hover {
 		cursor: grab;
@@ -21,5 +28,4 @@
 	&.dragging {
 		cursor: grabbing;
 	}
-
 }

@@ -1,5 +1,10 @@
 // global project variables
-@import "partials/base";
+@import "../../sass-vars.json";
+
+$container-width: #{$width}px;
+$container-height: #{$height}px;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
 
 // partials
 @import "partials/mixins";
