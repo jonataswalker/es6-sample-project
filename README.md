@@ -1,3 +1,5 @@
+[![NPM][npm-icon] ][npm-url]
+
 # es6-sample-project
 An ES6 sample project using [Rollup](https://github.com/rollup/rollup), [Bublé](https://buble.surge.sh/guide/#what-is-buble) (as a plugin), [Sass (node-sass)](https://github.com/sass/node-sass/).
 
