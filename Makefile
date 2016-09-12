@@ -8,14 +8,6 @@ define GetFromPkg
 $(shell node -p "require('./package.json').$(1)")
 endef
 
-define Release
-  NEXT_VERSION=`npm version $(1) --no-git-tag-version` && \
-  git add . && \
-  git commit -m "Bump to $$NEXT_VERSION" && \
-  git tag -a "$$NEXT_VERSION" -m "Bump to $$NEXT_VERSION" && \
-  git push && git push origin $$NEXT_VERSION && npm publish
-endef
-
 PROJECT		:= $(call GetFromPkg,name)
 LAST_VERSION	:= $(call GetFromPkg,version)
 DESCRIPTION	:= $(call GetFromPkg,description)
@@ -77,6 +69,7 @@ help:
 	@echo "- build                   Build JavaScript and CSS files"
 	@echo "- build-watch             Build files and watch for modifications"
 	@echo "- test                    Run unit tests in the console"
+	@echo "- publish                 Increase version, commit, push and publish"
 	@echo "- help                    Display this help message"
 	@echo
 	@echo "Other less frequently used targets are:"
@@ -92,8 +85,7 @@ npm-install: install
 .PHONY: install
 install: $(ROOT_DIR)/package.json
 	@mkdir -p $(@D)
-	npm install
-	@touch $^
+	@npm install
 
 .PHONY: publish
 publish:
@@ -104,7 +96,7 @@ publish:
 		echo ""; \
 		return 1; \
 	fi
-	#@$(MAKE) -f $(THIS_FILE) test
+	@$(MAKE) test
 	$(eval NEXT_VERSION := $(shell npm version $(RELEASE_TYPE) --no-git-tag-version))
 	@$(MAKE) -f $(THIS_FILE) build
 	@git add .
