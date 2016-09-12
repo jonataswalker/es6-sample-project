@@ -12,7 +12,8 @@ define Release
   NEXT_VERSION=`npm version $(1) --no-git-tag-version` && \
   git add . && \
   git commit -m "Bump to $$NEXT_VERSION" && \
-  git push && git push --tags && npm publish
+  git tag -a "$$NEXT_VERSION" -m "Bump to $$NEXT_VERSION" && \
+  git push && git push origin $$NEXT_VERSION && npm publish
 endef
 
 PROJECT		:= $(call GetFromPkg,name)
@@ -104,11 +105,12 @@ publish:
 		return 1; \
 	fi
 	@$(MAKE) -f $(THIS_FILE) test
-	@$(call Release,$(RELEASE_TYPE))
-
-#    "preversion": "npm run test",
-#"version": "",
-#postversion": "make build && git push && git push --tags && npm publish"
+	NEXT_VERSION=$(shell npm version $(RELEASE_TYPE) --no-git-tag-version)
+	@$(MAKE) -f $(THIS_FILE) build
+	@git add .
+	@git commit -m "Bump to $$NEXT_VERSION"
+	@git tag -a "$$NEXT_VERSION" -m "Bump to $$NEXT_VERSION"
+	@git push && git push origin $$NEXT_VERSION && npm publish
 
 .PHONY: test
 test: build
@@ -121,7 +123,11 @@ watch:
 	$(PARALLELSHELL) "make watch-js" "make watch-sass"
 
 .PHONY: build
-build: install build-js build-css
+build: install clean build-js build-css
+
+.PHONY: clean
+clean:
+	@rm -fr $(BUILD_DIR)
 
 .PHONY: build-js
 build-js: bundle-js lint uglifyjs add-js-header
@@ -133,6 +139,7 @@ build-css: compile-sass prefix-css cleancss add-css-header
 
 .PHONY: compile-sass
 compile-sass: $(SASS_MAIN_FILE)
+	@mkdir -p $(BUILD_DIR)
 	@$(SASS) $(SASSFLAGS) $^ $(CSS_COMBINED)
 
 .PHONY: prefix-css
@@ -145,6 +152,7 @@ cleancss: $(CSS_COMBINED)
 
 .PHONY: bundle-js
 bundle-js:
+	@mkdir -p $(BUILD_DIR)
 	@$(ROLLUP) $(ROLLUPFLAGS)
 
 .PHONY: lint
