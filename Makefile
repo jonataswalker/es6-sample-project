@@ -1,3 +1,4 @@
+THIS_FILE	:= $(lastword $(MAKEFILE_LIST))
 ROOT_DIR	:= $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NOW		:= $(shell date --iso=seconds)
 SRC_DIR 	:= $(ROOT_DIR)/src
@@ -5,6 +6,13 @@ BUILD_DIR 	:= $(ROOT_DIR)/build
 
 define GetFromPkg
 $(shell node -p "require('./package.json').$(1)")
+endef
+
+define Release
+  NEXT_VERSION=`npm version $(1) --no-git-tag-version` && \
+  git add . && \
+  git commit -m "Bump to $$NEXT_VERSION" && \
+  git push && git push --tags && npm publish
 endef
 
 PROJECT		:= $(call GetFromPkg,name)
@@ -81,10 +89,26 @@ help:
 npm-install: install
 
 .PHONY: install
-install: package.json
+install: $(ROOT_DIR)/package.json
 	@mkdir -p $(@D)
 	npm install
-	@touch $@
+	@touch $^
+
+.PHONY: publish
+publish:
+	@if [ ! "$(RELEASE_TYPE)" ]; then \
+		echo ""; \
+		echo "Release type was not specified!"; \
+		echo "Usage: make publish RELEASE_TYPE=\"major|minor|patch\""; \
+		echo ""; \
+		return 1; \
+	fi
+	@$(MAKE) -f $(THIS_FILE) test
+	@$(call Release,$(RELEASE_TYPE))
+
+#    "preversion": "npm run test",
+#"version": "",
+#postversion": "make build && git push && git push --tags && npm publish"
 
 .PHONY: test
 test: build

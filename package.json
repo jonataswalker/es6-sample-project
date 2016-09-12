@@ -1,6 +1,6 @@
 {
   "name": "es6-sample-project",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "An ES6 sample project using Rollup, Bublé, Sass",
   "author": "Jonatas Walker",
   "homepage": "https://github.com/jonataswalker/es6-sample-project",
@@ -37,9 +37,6 @@
     "extends": "jwalker"
   },
   "scripts": {
-    "test": "make test",
-    "preversion": "npm run test",
-    "version": "",
-    "postversion": "make build && git push && git push --tags && npm publish"
+    "test": "make test"
   }
 }
