@@ -1,8 +1,8 @@
 /**
  * An ES6 sample project using Rollup, Bublé, Sass
  * https://github.com/jonataswalker/es6-sample-project
- * Version: v1.10.0
- * Built: 2016-09-12T08:27:24-03:00
+ * Version: v1.11.0
+ * Built: 2016-09-12T08:31:52-03:00
  */
 
 (function (global, factory) {
