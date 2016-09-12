@@ -108,9 +108,9 @@ publish:
 	NEXT_VERSION=$(shell npm version $(RELEASE_TYPE) --no-git-tag-version)
 	@$(MAKE) -f $(THIS_FILE) build
 	@git add .
-	@git commit -m "Bump to $$NEXT_VERSION"
-	@git tag -a "$$NEXT_VERSION" -m "Bump to $$NEXT_VERSION"
-	@git push && git push origin $$NEXT_VERSION && npm publish
+	@git commit -m "Bump to $(NEXT_VERSION)"
+	@git tag -a $(NEXT_VERSION) -m "Bump to $(NEXT_VERSION)"
+	@git push && git push origin $(NEXT_VERSION) && npm publish
 
 .PHONY: test
 test: build
