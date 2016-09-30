@@ -23,7 +23,7 @@
     "clean-css": "^3.4.20",
     "eslint": "^3.6.0",
     "eslint-config-jwalker": "^1.9.0",
-    "node-sass": "^3.9.3",
+    "node-sass": "^3.10.0",
     "node-sass-json-importer": "^2.1.1",
     "nodemon": "^1.10.2",
     "parallelshell": "^2.0.0",
