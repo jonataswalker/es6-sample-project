@@ -1,8 +1,8 @@
 /**
  * An ES6 sample project using Rollup, Bublé, Sass
  * https://github.com/jonataswalker/es6-sample-project
- * Version: v1.19.0
- * Built: 2016-09-12T10:17:39-03:00
+ * Version: v1.20.0
+ * Built: 2016-10-09T09:32:31-03:00
  */
 
 (function (global, factory) {
@@ -75,7 +75,7 @@ var Drag = function Drag(base) {
         });
       },
       start = function (evt) {
-        if (evt.button !== 0) return;
+        if (evt.button !== 0) { return; }
 
         lastX = evt.clientX;
         lastY = evt.clientY;
@@ -107,7 +107,7 @@ var Drag = function Drag(base) {
 var Base = function Base() {
   var this$1 = this;
 
-  // Let all other classes (sort of) hidden to application - when instantiated.
+  // Let all other classes (sort of) hidden to application - when instantiated
   // And let each class visible to each other
   this.constructor.Html = new Html(this);
   this.container = this.constructor.Html.createContainer();
@@ -128,7 +128,7 @@ var Base = function Base() {
       this$1.container.classList.remove(dragging);
       this$1.container.textContent = 'Drag me';
       this$1.container.style.lineHeight = height + 'px';
-      if (resp.y < 0) this$1.container.style.top = 0;
+      if (resp.y < 0) { this$1.container.style.top = 0; }
     }
   });
 };
