@@ -82,10 +82,13 @@ help:
 .PHONY: npm-install
 npm-install: install
 
-.PHONY: install
-install: $(ROOT_DIR)/package.json
+$(BUILD_DIR)/timestamps/node-modules-timestamp: package.json
 	@mkdir -p $(@D)
-	@npm install
+	npm install
+	@touch $@
+
+.PHONY: install
+install: $(BUILD_DIR)/timestamps/node-modules-timestamp
 
 .PHONY: publish
 publish:
@@ -119,6 +122,7 @@ build: install clean build-js build-css
 
 .PHONY: clean
 clean:
+	@rm -f $(BUILD_DIR)/timestamps/eslint-timestamp
 	@rm -fr $(BUILD_DIR)
 
 .PHONY: build-js
@@ -147,9 +151,14 @@ bundle-js:
 	@mkdir -p $(BUILD_DIR)
 	@$(ROLLUP) $(ROLLUPFLAGS)
 
-.PHONY: lint
-lint: $(JS_SRC)
+$(BUILD_DIR)/timestamps/eslint-timestamp: $(SRC_DIR)
+	@mkdir -p $(@D)
+	@echo "Running eslint ..."
 	@$(ESLINT) $^
+	@touch $@
+
+.PHONY: lint
+lint: $(BUILD_DIR)/timestamps/eslint-timestamp
 
 .PHONY: uglifyjs
 uglifyjs: $(JS_DEBUG)

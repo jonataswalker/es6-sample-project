@@ -26,6 +26,8 @@ export default {
       case 'string':
         el = this.$(element);
         break;
+      default:
+        console.warn('Unknown type!');
     }
     this.assert(el, 'Can\'t evaluate: @param ' + element);
     return el;
@@ -55,7 +57,8 @@ export default {
       return (!!el && el instanceof HTMLElement);
     }
     // Older browsers
-    return (!!el && typeof el === 'object' && el.nodeType === 1 && !!el.nodeName);
+    return (!!el && typeof el === 'object' && el.nodeType === 1 &&
+        !!el.nodeName);
   },
   /**
    * @param {String} html

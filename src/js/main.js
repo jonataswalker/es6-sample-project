@@ -11,7 +11,7 @@ export default class Base {
    * @constructor
    */
   constructor() {
-    // Let all other classes (sort of) hidden to application - when instantiated.
+    // Let all other classes (sort of) hidden to application - when instantiated
     // And let each class visible to each other
     this.constructor.Html = new Html(this);
     this.container = this.constructor.Html.createContainer();
