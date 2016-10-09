@@ -37,5 +37,8 @@ Includes `make compile-sass` `make prefix-css` `make cleancss` `make add-css-hea
 ### Why Makefile?
 Because it's just great.
 
+### Missing Tests?
+For the sake of simplicity.
+
 ### Final result
 See [here a demo](http://rawgit.com/jonataswalker/es6-sample-project/master/examples/example.html).

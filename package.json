@@ -6,6 +6,13 @@
   "homepage": "https://github.com/jonataswalker/es6-sample-project",
   "license": "MIT",
   "main": "build/es6-sample-project.min.js",
+  "keywords": [
+    "es6",
+    "es6 project",
+    "rollup",
+    "buble",
+    "sample project"
+  ],
   "rollup": {
     "entry": "src/js/main.js",
     "dest": "build/es6-sample-project.js",
