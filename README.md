@@ -1,6 +1,7 @@
-[![npm package](https://nodei.co/npm/es6-sample-project.png?downloads=true&stars=true)](https://nodei.co/npm/es6-sample-project/)
-
 # es6-sample-project
+
+[![NPM](https://nodei.co/npm/es6-sample-project.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/es6-sample-project/)
+
 An ES6 sample project using [Rollup](https://github.com/rollup/rollup), [Bublé](https://buble.surge.sh/guide/#what-is-buble) (as a plugin), [Sass (node-sass)](https://github.com/sass/node-sass/).
 
 This package shows how to get started writing ES6 modules. The workflow is like this:
