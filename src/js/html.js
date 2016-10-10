@@ -16,7 +16,6 @@ export class Html {
   }
 
   createContainer() {
-    console.warn();
     let container = document.createElement('div');
     container.className = VARS.namespace + VARS.container;
     container.textContent = 'Drag me';
@@ -25,6 +24,6 @@ export class Html {
   }
 
   htmlTest() {
-    console.warn('htmlTest invoked');
+    console.info('htmlTest invoked'); // eslint-disable-line no-console
   }
 }

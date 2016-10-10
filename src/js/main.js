@@ -38,6 +38,6 @@ export default class Base {
   }
 
   baseTest() {
-    console.warn('baseTest invoked');
+    console.info('baseTest invoked'); //eslint-disable-line no-console
   }
 }
