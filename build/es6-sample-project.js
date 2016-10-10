@@ -1,8 +1,8 @@
 /**
  * An ES6 sample project using Rollup, Bublé, Sass
  * https://github.com/jonataswalker/es6-sample-project
- * Version: v1.22.0
- * Built: 2016-10-09T09:42:41-03:00
+ * Version: v1.22.2
+ * Built: 2016-10-09T22:47:18-03:00
  */
 
 (function (global, factory) {
@@ -27,7 +27,6 @@ var Html = function Html(base) {
 };
 
 Html.prototype.createContainer = function createContainer () {
-  console.warn();
   var container$$1 = document.createElement('div');
   container$$1.className = namespace + container;
   container$$1.textContent = 'Drag me';
@@ -36,7 +35,7 @@ Html.prototype.createContainer = function createContainer () {
 };
 
 Html.prototype.htmlTest = function htmlTest () {
-  console.warn('htmlTest invoked');
+  console.info('htmlTest invoked'); // eslint-disable-line no-console
 };
 
 /**
@@ -134,7 +133,7 @@ var Base = function Base() {
 };
 
 Base.prototype.baseTest = function baseTest () {
-  console.warn('baseTest invoked');
+  console.info('baseTest invoked'); //eslint-disable-line no-console
 };
 
 return Base;
