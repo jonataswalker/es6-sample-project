@@ -28,7 +28,7 @@
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "clean-css": "^3.4.20",
-    "eslint": "^3.8.0",
+    "eslint": "^3.9.0",
     "eslint-config-jwalker": "^1.11.0",
     "node-sass": "^3.10.1",
     "node-sass-json-importer": "^2.1.1",
