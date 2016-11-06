@@ -26,7 +26,7 @@
     "url": "https://github.com/jonataswalker/es6-sample-project/issues"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
+    "autoprefixer": "^6.5.2",
     "clean-css": "^3.4.20",
     "eslint": "^3.9.0",
     "eslint-config-jwalker": "^1.11.0",
