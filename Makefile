@@ -1,6 +1,6 @@
 THIS_FILE	:= $(lastword $(MAKEFILE_LIST))
 ROOT_DIR	:= $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-NOW		:= $(shell date --iso=seconds)
+NOW		:= $(shell date +%FT%T%z)
 SRC_DIR 	:= $(ROOT_DIR)/src
 BUILD_DIR 	:= $(ROOT_DIR)/build
 
@@ -84,7 +84,7 @@ npm-install: install
 
 $(BUILD_DIR)/timestamps/node-modules-timestamp: package.json
 	@mkdir -p $(@D)
-	npm install
+	yarn install
 	@touch $@
 
 .PHONY: install
