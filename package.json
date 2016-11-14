@@ -29,7 +29,7 @@
     "autoprefixer": "^6.5.3",
     "clean-css": "^3.4.20",
     "eslint": "^3.9.0",
-    "eslint-config-jwalker": "^1.11.0",
+    "eslint-config-jwalker": "^1.12.0",
     "node-sass": "^3.12.1",
     "node-sass-json-importer": "^2.1.1",
     "nodemon": "^1.11.0",
